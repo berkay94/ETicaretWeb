@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6afdec0dcece4c95828f6247ef98a043" Name="Diagram1">
+        <EntityTypeShape EntityType="ETicaretWebModel.C__MigrationHistory" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ETicaretWebModel.AspNetRoles" Width="1.5" PointX="0.75" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ETicaretWebModel.AspNetUserClaims" Width="1.5" PointX="5.25" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="ETicaretWebModel.AspNetUserLogins" Width="1.5" PointX="5.25" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ETicaretWebModel.AspNetUsers" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ETicaretWebModel.Kategori" Width="1.5" PointX="3.75" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ETicaretWebModel.Sepet" Width="1.5" PointX="8.25" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ETicaretWebModel.Siparis" Width="1.5" PointX="5.25" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ETicaretWebModel.SiparisKalem" Width="1.5" PointX="7.5" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ETicaretWebModel.Urunler" Width="1.5" PointX="6" PointY="15.625" IsExpanded="true" />
+        <AssociationConnector Association="ETicaretWebModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="ETicaretWebModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="ETicaretWebModel.FK_Sepet_AspNetUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="ETicaretWebModel.FK_Siparis_AspNetUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="ETicaretWebModel.FK_Urunler_Kategori" ManuallyRouted="false" />
+        <AssociationConnector Association="ETicaretWebModel.FK_Sepet_Urunler" ManuallyRouted="false" />
+        <AssociationConnector Association="ETicaretWebModel.FK_SiparisKalem_Siparis" ManuallyRouted="false" />
+        <AssociationConnector Association="ETicaretWebModel.FK_SiparisKalem_Urunler" ManuallyRouted="false" />
+        <AssociationConnector Association="ETicaretWebModel.AspNetUserRoles" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
