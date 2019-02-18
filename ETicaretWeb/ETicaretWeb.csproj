@@ -340,6 +340,8 @@
     <Content Include="Views\Urunlers\Details.cshtml" />
     <Content Include="Views\Urunlers\Edit.cshtml" />
     <Content Include="Views\Urunlers\Index.cshtml" />
+    <Content Include="Views\Home\Kategori.cshtml" />
+    <Content Include="Views\Home\Urun.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
