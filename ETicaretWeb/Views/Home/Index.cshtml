@@ -1,19 +1,22 @@
 ﻿
 @using ETicaretWeb.Models;
 @{
-    ViewBag.Title = "ETicaret Sitesi";
+    ViewBag.Title = "E-Ticaret Sitesi";
     IEnumerable<Kategori> KategoriListesi = ViewBag.KategoriListesi as IEnumerable<Kategori>;
 
     IEnumerable<Urunler> SonUrunler = ViewBag.SonUrunler as IEnumerable<Urunler>;
 }
 
 <div class="jumbotron">
-    <h1>ETicaret Sitesi</h1>
+    <div class="container">
+        <h1 align="center">E-Ticaret Sitesi</h1>
+    </div>
+   
    
 </div>
 
 <div class="row">
-    <div class="col-md-3">
+    <div class="col-md-2">
         <h2>Kategoriler</h2>
         <ul>
             @foreach (var item in KategoriListesi)

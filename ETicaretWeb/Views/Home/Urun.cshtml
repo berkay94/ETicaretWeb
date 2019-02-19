@@ -31,14 +31,16 @@
 
             <div class="col-md-6">Urun Fiyat:
             <span style="color:red;font-weight:bold;font-size:16px">@Model.UrunFiyat TL</span>
-            <form action="/Sepets/SepeteEkle" method="post">
+            <form action=@Url.Action("SepeteEkle","Sepet") method="post">
                 <input type="hidden" name="id" value="@Model.UrunId" style="width:50px"/>
                 <input type="number" name="adet" value="1" style="width:50px"/>
+                <input type="submit" id="gonder" value="Sepete Ekle" class="btn-default" />
             </form>
             </div>
         </div>
 
         <h1><b><i>Urun Aciklamasi</i></b></h1>
+        <textarea class="ckeditor" id="asd" name="asd"></textarea>
         <p>@MvcHtmlString.Create(Model.UrunAciklama)</p>
     </div>
 </div>

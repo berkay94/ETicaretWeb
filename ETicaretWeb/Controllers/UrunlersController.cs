@@ -11,6 +11,7 @@ using ETicaretWeb.Models;
 
 namespace ETicaretWeb.Controllers
 {
+    
     public class UrunlersController : Controller
     {
         private ETicaretWebEntities db = new ETicaretWebEntities();

@@ -1,0 +1,77 @@
+﻿@model IEnumerable<ETicaretWeb.Models.Sepet>
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="jumbotron">
+    <h2>Sepet Bolumu</h2>
+</div>
+
+<table class="table">
+   
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Urunler.UrunAdi)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Adet)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Tutar)
+        </th>
+
+    </tr>
+    
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(m => item.Urunler.UrunAdi)
+        </td>
+
+        <td>
+            <form action="/Sepet/SepetGuncelle" method="post">
+                <input type="hidden" name="id" value="@item.SepetId" style="width:50px" />
+                <input type="hidden" name="adet" value="@item.Adet" style="width:50px" />
+                <input type="submit" id="gonder" value="Guncelle" />
+            </form>
+        </td>
+
+        <td>
+            @Html.DisplayFor(m=>item.Tutar) TL
+        </td>
+        <td>
+            @Html.ActionLink("Sil", "Sil", new { id=item.SepetId})
+        </td>
+    </tr>
+
+    }
+
+    <tr>
+        <th>
+            Toplam
+        </th>
+        <th>
+            @Model.Sum(a=>a.Adet)
+        </th>
+        <th>
+            @Model.Sum(a=>a.Tutar) TL
+        </th>
+        <th></th>
+    </tr>
+    <tr>
+        <td>
+            <a class="btn btn-default" href="@Url.Action("Index","Home")">Alisverise Devam Et</a>
+        </td>
+
+        <td colspan="3" style="text-align:right">
+            <a class="btn btn-default" href="@Url.Action("SiparisiTamamla","Siparis")">Alisverisi Tamamla</a>
+        </td>
+    </tr>
+
+</table>
+
+
