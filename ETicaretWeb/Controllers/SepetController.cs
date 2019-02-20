@@ -16,9 +16,8 @@ namespace ETicaretWeb.Controllers
         // GET: Sepet
         public ActionResult Index()
         {
-            string userId = User.Identity.GetUserId();
-            var sepets = db.Sepet.Where(a => a.RefAspNetUserId == userId).Include(s => s.Urunler);
-            return View(sepets.ToList());
+            var sepet = db.Sepet.Include(s => s.Urunler);
+            return View(sepet.ToList());
         }
 
         public ActionResult SepeteEkle(int? adet,int id)
@@ -77,6 +76,15 @@ namespace ETicaretWeb.Controllers
             db.SaveChanges();
 
             return RedirectToAction("Index");
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if(disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
         }
 
     }

@@ -22,9 +22,7 @@
             @Html.DisplayNameFor(model => model.Tutar)
         </th>
 
-        <th>
-            İşlemler
-        </th>
+        
 
     </tr>
     
@@ -38,21 +36,26 @@
 
 
         <td>
-            @Html.DisplayFor(m => item.Adet)
+            <form action="/Sepet/SepetGuncelle" method="post">
+                <input type="hidden" name="id" value="@item.SepetId" style="width:50px" />
+                <input type="number" name="adet" value="@item.Adet" style="width:50px" />
+                <input type="submit" name="gonder" value="Güncelle" class="btn btn-success" />
+
+            </form>
         </td>
+
+
         <td>
             @Html.DisplayFor(m => item.Tutar) TL
         </td>
 
-        <td>
-            <form action="/Sepet/SepetGuncelle" method="post">
-                <input type="hidden" name="id" value="@item.SepetId" style="width:50px" />
-                <input type="hidden" name="adet" value="@item.Adet" style="width:50px" />
-                <input type="submit" name="gonder" value="Güncelle" class="btn btn-success" /> |
-                @Html.ActionLink("Sil", "Sil", new { id = item.SepetId }, new { @class = "btn btn-warning" })
-            </form>
-        </td>
-        
+       <td>
+           @Html.ActionLink("Sil", "Sil",new { id=item.SepetId})
+       </td>
+
+
+
+
     </tr>
 
     }
@@ -62,7 +65,7 @@
             Toplam
         </th>
         <th>
-            @Model.Sum(a=>a.Adet)
+            @Model.Sum(a=>a.Adet) Adet
         </th>
         <th>
             @Model.Sum(a=>a.Tutar) TL
@@ -71,11 +74,11 @@
     </tr>
     <tr>
         <td>
-            <a class="btn btn-default" href="@Url.Action("Index","Home")">Alisverise Devam Et</a>
+            <a class="btn btn-info" href="@Url.Action("Index","Home")">Alisverise Devam Et</a>
         </td>
 
         <td colspan="3" style="text-align:right">
-            <a class="btn btn-default" href="@Url.Action("SiparisiTamamla","Siparis")">Alisverisi Tamamla</a>
+            <a class="btn btn-danger" href="@Url.Action("SiparisTamamla","Siparis")">Alisverisi Tamamla</a>
         </td>
     </tr>
 
